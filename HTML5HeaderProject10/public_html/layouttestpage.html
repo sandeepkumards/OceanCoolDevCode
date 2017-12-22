@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en-ca">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://cuppalabs.github.io/img/coffee14.png" type="image/x-icon" />
+  <title>MultiSelect Dropdown</title>
+  <link href="https://cuppalabs.github.io/css/main.css" rel="stylesheet">
+  <meta name="description" content="A multiselect dropdown component for angular 2 and 4 applications. Developed in Angular 2 and 4, its easy to install and integrate.">
+  <meta content='angular 2 dropdown, angular2 dropdown, angular 2 multiselect dropdown, angular 2 multiselect' name='keywords' />
+  <meta property="og:description" content="A multiselect dropdown component for angular 2 and 4 applications. Developed in Angular 2 and 4, its easy to install and integrate." />
+  <meta property="og:url" content="https://cuppalabs.github.io/components/multiselectDropdown/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MultiSelect Dropdown" />
+  <meta property="og:site_name" content="Cuppa Labs" />
+  <meta property="article:publisher" content="https://www.facebook.com/cuppalabs/" />
+  <meta property="article:author" content="https://www.facebook.com/pradeepkumar.terli" />
+  <meta property="article:tag" content="Angular 2" />
+  <meta property="article:tag" content="html5" />
+  <meta property="article:tag" content="css3" />
+  <meta property="og:image" content="https://cuppalabs.github.io/img/components/multiselect-thumbnail.png" />
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example2" data-offset="60">
+<div id="load">
+  <div class="loader">
+	<div class="loader-inner">
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+	</div>
+</div>
+</div>
+
+  <nav class="navbar navbar-expand-md top-navbar d-print-none">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+          <img src="https://cuppalabs.github.io/img/cuppa-logo-coffee11.png" height="32" alt="">
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-navicon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="https://cuppalabs.github.io/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="https://cuppalabs.github.io/components">Angular Components</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://cuppalabs.github.io/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://cuppalabs.github.io/ng2-social-login">OAuth</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="https://cuppalabs.github.io/aboutme">About Me</a>
+        </li>
+         <li class="nav-item ">
+          <a class="nav-link" href="https://cuppalabs.github.io/interview-experiences">Interview Experiences</a>
+        </li>
+        <li class="nav-item">
+          <button type="button" id="paypal-form" class="btn btn-primary donation-button" data-toggle="modal" data-target="#exampleModalLong">
+            Donate 
+          </button>
+          <a id="insta-button" href="https://www.instamojo.com/@cuppalabs/" rel="im-checkout" data-behaviour="remote" data-style="flat" data-text="Donate"></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://github.com/CuppaLabs">
+                <i class="fa fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.facebook.com/cuppalabs">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://www.linkedin.com/in/pradeep-kumar-terli">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://plus.google.com/102171107795347642020">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item nav-link" href="https://twitter.com/PradeepTerli">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Donate and keep us going !!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+                        <div class="alert alert-success" role="alert" id="successMsg">
+Your transaction is successful. Thank you for your support</div>
+          <div class="col-md-7">
+            <div class="row">
+
+              <form class="form-inline donate-form">
+
+                <div class="col-md-8">
+                  <label for="inlineFormInputName2">Amount</label>
+                  <input type="text" id="donateamount" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Enter amount...">
+                </div>
+                <div class="col-md-4">
+                  <label for="inlineFormInputName2">Currency</label>
+                  <select class="form-control" id="donatecurrency">
+                      <option value="USD">USD</option>
+                      <option value="BRL">BRL</option>
+                  </select>
+                </div>
+                <div class="col-md-12">
+                  <label for="inlineFormInputName2">Email</label>
+                  <input type="text" id="donateamount" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Enter email address...">
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div id="paypal-button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> <div class="container">
+
+  <div class="row flex-xl-nowrap center-content">
+    <div class="col col-md-12 col-lg-9 left-col">
+      <div class="row component-headline">
+        <div class="col-md-12 px-0">
+        <div class="navbar">
+          <div class="dropdown comp-list">
+          <i class="fa fa-outdent comp-list" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </i>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item disabled"><h6>All Components</h6></a>
+             
+  
+  
+ 
+ 
+  <a class="dropdown-item" href="https://cuppalabs.github.io/components/datepicker/">Angular 2 DateTime picker</a>
+ 
+ 
+ 
+  <a class="dropdown-item" href="https://cuppalabs.github.io/components/multiselectDropdown/">MultiSelect Dropdown</a>
+ 
+ 
+  
+ 
+  
+ 
+ 
+  <a class="dropdown-item" href="https://cuppalabs.github.io/components/slidemenu/">Angular 2 Slide Menu</a>
+ 
+ 
+ 
+  <a class="dropdown-item" href="https://cuppalabs.github.io/components/datatable/">Angular 2 Data Table</a>
+ 
+ 
+ 
+  <a class="dropdown-item" href="https://cuppalabs.github.io/components/fanmenu/">Circular Fan Menu</a>
+ 
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+
+          </div>
+        </div>
+          <h4 class="mr-md-auto component-title">MultiSelect Dropdown</h4>
+          <ul class="navbar-nav flex-row ml-md-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-item nav-link mr-md-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-share-alt share-btn"></i>
+            </a>
+              <div class="dropdown-menu">
+                <h6 class="pt-2 pb-1 pr-3 pl-3">Share on</h6>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="http://www.facebook.com/sharer.php?u=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-facebook"></i>
+              </a>
+                <a class="dropdown-item" href="http://www.linkedin.com/shareArticle?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+                <a class="dropdown-item" href="http://twitter.com/share?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+                <a class="dropdown-item" href="https://plus.google.com/share?url=https://cuppalabs.github.io/components/multiselectDropdown/" onclick="window.open(this.href, 'windowName', 'width=600, height=400, left=24, top=24, scrollbars, resizable'); return false;"
+                  rel="nofollow" target="_blank">
+                <i class="fa fa-google"></i>
+              </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link mr-md-2 btn btn-primary d-none d-md-block" href="https://cuppalabs.github.io/angular2-multiselect-dropdown" target="_blank">
+                Live Demos
+            </a>
+             <a class="nav-item nav-link mr-md-2 d-block d-md-none" href="https://cuppalabs.github.io/angular2-multiselect-dropdown" target="_blank">
+                <i class="fa fa-tv  share-btn"></i>
+            </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item nav-link mr-md-2 btn btn-primary d-none d-md-block" href="https://github.com/CuppaLabs/angular2-multiselect-dropdown" target="_blank">
+                Code on Github
+            </a>
+             <a class="nav-item nav-link mr-md-2 d-block d-md-none" href="https://github.com/CuppaLabs/angular2-multiselect-dropdown" target="_blank">
+                <i class="fa fa-download  share-btn"></i>
+            </a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col-lg-3 sidebar-offcanvas sidebar d-none d-md-non d-lg-block" id="sidebar">
+          <div class="list-group" id="navbar-example2">
+            <a href="#" class="list-group-item disabled">
+              <h6>Table of Contents</h6>
+            </a>
+            
+            <a href="#Overview" class="list-group-item">Overview</a> 
+            <a href="#Getting Started" class="list-group-item">Getting Started</a> 
+            <a href="#Installation" class="list-group-item">Installation</a> 
+            <a href="#Usage" class="list-group-item">Usage</a> 
+            <a href="#Template - For custom html of menu item" class="list-group-item">Template - For custom html of menu item</a> 
+            <a href="#Using with Template Driven Forms" class="list-group-item">Using with Template Driven Forms</a> 
+            <a href="#Using with Reactive Forms" class="list-group-item">Using with Reactive Forms</a> 
+            <a href="#Configuration Settings" class="list-group-item">Configuration Settings</a> 
+            <a href="#Callback Methods" class="list-group-item">Callback Methods</a> 
+
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-9">
+
+          <div class="row component-article">
+            <div class="col component-image">
+              <img class="img-fluid" src="https://cuppalabs.github.io/img/components/multiselect-thumbnail.png" />
+            </div>
+
+          </div>
+          <div class="row component-article">
+            <h4 id="overview">Overview</h4>
+
+<p>A multiselect dropdown component for angular applications. Developed in Angular 2, its easy to install and integrate.</p>
+
+<h4 id="features">Features</h4>
+
+<ul>
+  <li>Dropdown with multiselect.</li>
+  <li>Filter list.</li>
+  <li>Checkboxes.</li>
+  <li>Check all feature.</li>
+  <li>Single selection mode.</li>
+  <li>Highly configurable.</li>
+</ul>
+
+<h4 id="getting-started">Getting Started</h4>
+<p>To get started with using the multiselect dropdown component, follow the below steps. It’s easy to integrate and just a matter of minutes.</p>
+
+<h4 id="installation">Installation</h4>
+<ul>
+  <li>The Mutiselect Dropdown package is published on the <a href="https://www.npmjs.com/package/angular2-multiselect-dropdown">npm</a> Registry.</li>
+  <li>Install the package :</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    npm install angular2-multiselect-dropdown
+</code></pre>
+</div>
+
+<ul>
+  <li>Once installed import <code class="highlighter-rouge">AngularMultiSelectModule</code> from the installed package into your module as follows:</li>
+</ul>
+
+<h4 id="usage">Usage</h4>
+<p>Import <code class="highlighter-rouge">AngularMultiSelectModule</code> into <code class="highlighter-rouge">NgModule</code> in <code class="highlighter-rouge">app.module.ts</code></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">AngularMultiSelectModule</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'angular2-multiselect-dropdown/angular2-multiselect-dropdown'</span><span class="p">;</span>
+
+<span class="err">@</span><span class="nx">NgModule</span><span class="p">({</span>
+  <span class="c1">// ...</span>
+  <span class="na">imports</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">AngularMultiSelectModule</span><span class="p">,</span>
+  <span class="p">]</span>
+  <span class="c1">// ...</span>
+<span class="p">})</span>
+
+</code></pre>
+</div>
+
+<p>Declare the component data variables and options in your component where you want to consume the dropdown component.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">OnInit</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">AppComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+    <span class="nx">dropdownList</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">selectedItems</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">dropdownSettings</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="nx">ngOnInit</span><span class="p">(){</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dropdownList</span> <span class="o">=</span> <span class="p">[</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"India"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Singapore"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Australia"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"South Korea"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Germany"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"France"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Russia"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Italy"</span><span class="p">},</span>
+                              <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Sweden"</span><span class="p">}</span>
+                            <span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">selectedItems</span> <span class="o">=</span> <span class="p">[</span>
+                                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Singapore"</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Australia"</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"Canada"</span><span class="p">},</span>
+                                <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"itemName"</span><span class="p">:</span><span class="s2">"South Korea"</span><span class="p">}</span>
+                            <span class="p">];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">dropdownSettings</span> <span class="o">=</span> <span class="p">{</span> 
+                                  <span class="na">singleSelection</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> 
+                                  <span class="na">text</span><span class="p">:</span><span class="s2">"Select Countries"</span><span class="p">,</span>
+                                  <span class="na">selectAllText</span><span class="p">:</span><span class="s1">'Select All'</span><span class="p">,</span>
+                                  <span class="na">unSelectAllText</span><span class="p">:</span><span class="s1">'UnSelect All'</span><span class="p">,</span>
+                                  <span class="na">enableSearchFilter</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                  <span class="na">classes</span><span class="p">:</span><span class="s2">"myclass custom-class"</span>
+                                <span class="p">};</span>            
+    <span class="p">}</span>
+    <span class="nx">onItemSelect</span><span class="p">(</span><span class="nx">item</span><span class="err">:</span><span class="nx">any</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">selectedItems</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">OnItemDeSelect</span><span class="p">(</span><span class="nx">item</span><span class="err">:</span><span class="nx">any</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">selectedItems</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">onSelectAll</span><span class="p">(</span><span class="nx">items</span><span class="err">:</span> <span class="nx">any</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">onDeSelectAll</span><span class="p">(</span><span class="nx">items</span><span class="err">:</span> <span class="nx">any</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Add the following component tag in you template</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;angular2-multiselect</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">dropdownList</span><span class="err">"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">selectedItems</span><span class="err">"</span> 
+    <span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">dropdownSettings</span><span class="err">"</span> 
+    <span class="err">(</span><span class="na">onSelect</span><span class="err">)="</span><span class="na">onItemSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> 
+    <span class="err">(</span><span class="na">onDeSelect</span><span class="err">)="</span><span class="na">OnItemDeSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
+    <span class="err">(</span><span class="na">onSelectAll</span><span class="err">)="</span><span class="na">onSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
+    <span class="err">(</span><span class="na">onDeSelectAll</span><span class="err">)="</span><span class="na">onDeSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/angular2-multiselect&gt;</span>
+
+</code></pre>
+</div>
+<h3 id="template---for-custom-html-of-menu-item">Template - For custom html of menu item</h3>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;angular2-multiselect</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">dropdownList</span><span class="err">"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">selectedItems</span><span class="err">"</span> <span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">dropdownSettings</span><span class="err">"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;c-item&gt;</span>
+          <span class="nt">&lt;ng-template</span> <span class="na">let-item=</span><span class="s">"item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">style=</span><span class="s">"color: #333;min-width: 150px;"</span><span class="nt">&gt;&lt;/label&gt;</span>
+            <span class="nt">&lt;img</span> <span class="err">[</span><span class="na">src</span><span class="err">]="</span><span class="na">item</span><span class="err">.</span><span class="na">image</span><span class="err">"</span> <span class="na">style=</span><span class="s">"width: 30px; border: 1px solid #efefef;margin-right: 20px;"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;label&gt;</span>Capital - <span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;/ng-template&gt;</span>
+  <span class="nt">&lt;/c-item&gt;</span>    
+<span class="nt">&lt;/angular2-multiselect&gt;</span>
+
+</code></pre>
+</div>
+
+<h3 id="using-with-template-driven-forms">Using with Template Driven Forms</h3>
+
+<p>Include the dropdown tag in the form html as follows</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;form</span> <span class="err">(</span><span class="na">ngSubmit</span><span class="err">)="</span><span class="na">onSubmit</span><span class="err">()"</span> <span class="err">#</span><span class="na">loginForm=</span><span class="s">"ngForm"</span> <span class="na">style=</span><span class="s">"border: 1px solid #ccc; padding: 10px;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Skills<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;angular2-multiselect</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">itemList</span><span class="err">"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">formModel</span><span class="err">.</span><span class="na">skills</span><span class="err">"</span> 
+                                  <span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">settings</span><span class="err">"</span> 
+                                  <span class="err">(</span><span class="na">onSelect</span><span class="err">)="</span><span class="na">onItemSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
+                                  <span class="err">(</span><span class="na">onDeSelect</span><span class="err">)="</span><span class="na">OnItemDeSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> 
+                                  <span class="err">(</span><span class="na">onSelectAll</span><span class="err">)="</span><span class="na">onSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> 
+                                  <span class="err">(</span><span class="na">onDeSelectAll</span><span class="err">)="</span><span class="na">onDeSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="na">name=</span><span class="s">"skills"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/angular2-multiselect&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+</code></pre>
+</div>
+<p>Initiatie the formModel as below:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="nx">formModel</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">name</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="na">email</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="na">skills</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">};</span>
+
+</code></pre>
+</div>
+<h3 id="using-with-reactive-forms">Using with Reactive Forms</h3>
+<p>Incluse the dropdwon in reactive form way as below</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;form</span> <span class="err">[</span><span class="na">formGroup</span><span class="err">]="</span><span class="na">userForm</span><span class="err">"</span> <span class="na">novalidate</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Skills<span class="nt">&lt;/label&gt;</span>
+           <span class="nt">&lt;angular2-multiselect</span> <span class="err">[</span><span class="na">data</span><span class="err">]="</span><span class="na">itemList</span><span class="err">"</span> <span class="err">[(</span><span class="na">ngModel</span><span class="err">)]="</span><span class="na">selectedItems</span><span class="err">"</span> 
+                                  <span class="err">[</span><span class="na">settings</span><span class="err">]="</span><span class="na">settings</span><span class="err">"</span> 
+                                  <span class="err">(</span><span class="na">onSelect</span><span class="err">)="</span><span class="na">onItemSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span>
+                                  <span class="err">(</span><span class="na">onDeSelect</span><span class="err">)="</span><span class="na">OnItemDeSelect</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> 
+                                  <span class="err">(</span><span class="na">onSelectAll</span><span class="err">)="</span><span class="na">onSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> 
+                                  <span class="err">(</span><span class="na">onDeSelectAll</span><span class="err">)="</span><span class="na">onDeSelectAll</span><span class="err">($</span><span class="na">event</span><span class="err">)"</span> <span class="na">formControlName=</span><span class="s">"skills"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/angular2-multiselect&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">formControlName=</span><span class="s">"name"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Email Address<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">formControlName=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;button</span> <span class="err">(</span><span class="na">click</span><span class="err">)="</span><span class="na">submitForm</span><span class="err">()"</span> <span class="err">[</span><span class="na">disabled</span><span class="err">]="!</span><span class="na">userForm</span><span class="err">.</span><span class="na">valid</span><span class="err">"</span> <span class="na">class=</span><span class="s">"btn btn-success btn-block"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+</code></pre>
+</div>
+<p>Initiate the form using formGroup module as below:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="nl">userForm</span><span class="p">:</span> <span class="nx">FormGroup</span><span class="p">;</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">userForm</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">fb</span><span class="p">.</span><span class="nx">group</span><span class="p">({</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+            <span class="na">email</span><span class="p">:</span> <span class="p">[</span><span class="s1">''</span><span class="p">,</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">],</span>
+            <span class="na">skills</span><span class="p">:</span> <span class="p">[[],</span> <span class="nx">Validators</span><span class="p">.</span><span class="nx">required</span><span class="p">]</span>
+        <span class="p">});</span>
+
+</code></pre>
+</div>
+
+<h4 id="configuration-settings">Configuration Settings</h4>
+<p>The following list of settings are supported by the component. Configure the settings to meet your requirement.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Setting</th>
+      <th style="text-align: left">Type</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">singleSelection</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">To set the dropdown for single item selection only.</td>
+      <td style="text-align: left">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">text</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Text to be show in the dropdown, when no items are selected.</td>
+      <td style="text-align: left">‘Select’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">enableCheckAll</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">Enable the option to select all items in list</td>
+      <td style="text-align: left">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">selectAllText</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Text to display as the label of select all option</td>
+      <td style="text-align: left">Select All</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">unSelectAllText</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Text to display as the label of unSelect option</td>
+      <td style="text-align: left">UnSelect All</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">enableSearchFilter</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">Enable filter option for the list.</td>
+      <td style="text-align: left">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">maxHeight</td>
+      <td style="text-align: left">Number</td>
+      <td style="text-align: left">Set maximum height of the dropdown list in px.</td>
+      <td style="text-align: left">300</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">badgeShowLimit</td>
+      <td style="text-align: left">Number</td>
+      <td style="text-align: left">Limit the number of badges/items to show in the input field. If not set will show all selected.</td>
+      <td style="text-align: left">All</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">classes</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Custom classes to the dropdown component. Classes are added to the dropdown selector tag. To add multiple classes, the value should be space separated class names.</td>
+      <td style="text-align: left">’’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">limitSelection</td>
+      <td style="text-align: left">Number</td>
+      <td style="text-align: left">Limit the selection of number of items from the dropdown list. Once the limit is reached, all unselected items gets disabled.</td>
+      <td style="text-align: left">none</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">disabled</td>
+      <td style="text-align: left">Boolean</td>
+      <td style="text-align: left">Disable the dropdown</td>
+      <td style="text-align: left">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">searchPlaceholderText</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Custom text for the search placeholder text. Default value would be ‘Search’</td>
+      <td style="text-align: left">‘Search’</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">groupBy</td>
+      <td style="text-align: left">String</td>
+      <td style="text-align: left">Name of the field by which the list should be grouped.</td>
+      <td style="text-align: left">none</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</body>
+
+</html>

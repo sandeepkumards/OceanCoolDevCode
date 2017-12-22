@@ -1,0 +1,113 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 5, 2017, 12:08:21 AM
+    Author     : kumakums
+*/
+
+* {
+    margin:0px;
+    padding:0px;
+}
+body {
+    font-size:14px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#c7c5c5;
+}
+ul {
+    list-style:none;
+}
+a {
+    text-decoration:none;
+}
+img {
+    border:none;
+}
+.clear								{clear:both;}
+
+.navigation_bg						{width:100%;margin:0px; padding:0px; height:48px; background:#125687;}
+.menu_nav							{float: none;margin: 0px auto;}
+.menu_nav ul						{height:36px;}
+.menu_nav ul li {     float: left;    transition: all 0.8s ease-in-out;    -webkit-transition: all 0.8s ease-in-out;    background: url(images/hover.jpg) no-repeat;        background-position-x: 0%;        background-position-y: 0%;    background-position: 0 -48px;}
+.menu_nav ul li a					{ font-family: 'Cambria'; font-size:14px;color:#fff;padding:0 40px;text-decoration:none;line-height:48px;	 									display:block; text-transform:uppercase; border-right: 1px solid #719ab7; }
+/*.menu_nav ul li:hover				{background:#901c1c;}*/
+.menu_nav ul li a:hover				{color:#fff;}
+/*.menu_nav ul li a.active			{background:#901c1c;}*/
+
+.menu_nav {    float: none;    margin: 0px auto;}
+
+hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #DF2C45 !important;
+  height: 50px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 2s;
+  transition-duration: 2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center.active:before {
+  left: 0;
+  right: 0;
+  background:#fff;
+}
+
+
+  #cssmenu .submenu-button {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    display: block;
+    border-left: 1px solid rgba(120, 120, 120, 0.15);
+    height: 52px;
+    width: 52px;
+    cursor: pointer;
+    background: #fff;
+  }
+  #cssmenu .submenu-button::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 26px;
+    display: block;
+    width: 1px;
+    height: 11px;
+    background: #000000;
+    z-index: 99;
+  }
+  #cssmenu .submenu-button::before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 26px;
+    display: block;
+    width: 11px;
+    height: 1px;
+    background: #000000;
+    z-index: 99;
+  }
+  #cssmenu .submenu-button.submenu-opened:after {
+    display: none;
+  }
